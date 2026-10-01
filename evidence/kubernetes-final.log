@@ -1,0 +1,34 @@
+Image: "heart-api:release-074c8b3372d9" with ID "sha256:eb53f4897b3d7f9c78113ac1bf0ff7c7b00595d610678242554789616cd78955" not yet present on node "heart-mlops-control-plane", loading...
+namespace/heart-mlops unchanged
+deployment.apps/heart-api configured
+service/heart-api unchanged
+ingress.networking.k8s.io/heart-api unchanged
+deployment.apps/heart-api image updated
+serviceaccount/traefik unchanged
+clusterrole.rbac.authorization.k8s.io/heart-traefik unchanged
+clusterrolebinding.rbac.authorization.k8s.io/heart-traefik unchanged
+ingressclass.networking.k8s.io/traefik unchanged
+deployment.apps/traefik unchanged
+service/traefik unchanged
+Waiting for deployment "heart-api" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "heart-api" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "heart-api" rollout to finish: 1 out of 2 new replicas have been updated...
+Waiting for deployment "heart-api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "heart-api" rollout to finish: 1 old replicas are pending termination...
+deployment "heart-api" successfully rolled out
+deployment "traefik" successfully rolled out
+{"status":"ready","model_version":"074c8b3372d9"}{"prediction":0,"disease_probability":0.432391735603244,"confidence":0.5676082643967559,"model_version":"074c8b3372d9","threshold":0.5}NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/heart-api   2/2     2            2           17m
+deployment.apps/traefik     1/1     1            1           17m
+
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/heart-api-5cdbdc69fc-l7vsk   1/1     Running   0          8s
+pod/heart-api-5cdbdc69fc-vs5fv   1/1     Running   0          5s
+pod/traefik-8684b74f5f-vn2kr     1/1     Running   0          17m
+
+NAME                TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+service/heart-api   ClusterIP   10.96.119.10   <none>        80/TCP         17m
+service/traefik     NodePort    10.96.92.84    <none>        80:30080/TCP   17m
+
+NAME                                  CLASS     HOSTS   ADDRESS   PORTS   AGE
+ingress.networking.k8s.io/heart-api   traefik   *                 80      17m

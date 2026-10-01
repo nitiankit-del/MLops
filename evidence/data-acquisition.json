@@ -1,0 +1,43 @@
+{
+  "source": "https://archive.ics.uci.edu/static/public/45/heart+disease.zip",
+  "citation": "Janosi et al. (1989), UCI Heart Disease, DOI:10.24432/C52P4X",
+  "raw_sha256": "a74b7efa387bc9d108d7d0115d831fe9b414b29ae7124f331b622b4efa0427c8",
+  "raw_rows": 303,
+  "clean_rows": 303,
+  "features": [
+    "age",
+    "sex",
+    "cp",
+    "trestbps",
+    "chol",
+    "fbs",
+    "restecg",
+    "thalach",
+    "exang",
+    "oldpeak",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "missing": {
+    "age": 0,
+    "sex": 0,
+    "cp": 0,
+    "trestbps": 0,
+    "chol": 0,
+    "fbs": 0,
+    "restecg": 0,
+    "thalach": 0,
+    "exang": 0,
+    "oldpeak": 0,
+    "slope": 0,
+    "ca": 4,
+    "thal": 2,
+    "target": 0
+  },
+  "class_counts": {
+    "0": 164,
+    "1": 139
+  },
+  "cleaning": "Original categories; num>0; exact duplicates removed; missing retained for fold-local imputation"
+}

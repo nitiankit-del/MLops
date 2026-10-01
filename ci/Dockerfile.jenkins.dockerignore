@@ -1,0 +1,9 @@
+.git
+.venv
+mlruns
+**/__pycache__
+screenshots
+evidence
+reports
+*.zip
+*.mp4

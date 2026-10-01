@@ -1,0 +1,15 @@
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES            SELECTOR
+deployment.apps/heart-api   2/2     2            2           76s   api          heart-api:local   app=heart-api
+deployment.apps/traefik     1/1     1            1           75s   traefik      traefik:v3.3.6    app=traefik
+
+NAME                             READY   STATUS    RESTARTS   AGE   IP           NODE                        NOMINATED NODE   READINESS GATES
+pod/heart-api-85488ddf6d-g5lvr   1/1     Running   0          76s   10.244.0.6   heart-mlops-control-plane   <none>           <none>
+pod/heart-api-85488ddf6d-kt868   1/1     Running   0          76s   10.244.0.5   heart-mlops-control-plane   <none>           <none>
+pod/traefik-8684b74f5f-vn2kr     1/1     Running   0          75s   10.244.0.7   heart-mlops-control-plane   <none>           <none>
+
+NAME                TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+service/heart-api   ClusterIP   10.96.119.10   <none>        80/TCP         76s   app=heart-api
+service/traefik     NodePort    10.96.92.84    <none>        80:30080/TCP   75s   app=traefik
+
+NAME                                  CLASS     HOSTS   ADDRESS   PORTS   AGE
+ingress.networking.k8s.io/heart-api   traefik   *                 80      76s

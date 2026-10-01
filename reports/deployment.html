@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Kubernetes deployment verification</title><style>body{font:19px system-ui;background:#edf3f5;color:#163445;margin:0}main{max-width:1320px;margin:35px auto}h1{font-size:36px;margin:12px 0}small{color:#55717b}pre{font:16px/1.6 monospace;background:#102b39;color:#d5eef0;padding:24px;border-radius:12px;white-space:pre-wrap;word-break:break-word}img{max-width:100%;max-height:670px;object-fit:contain;background:white;border-radius:12px}nav{margin:20px 0}a{color:#087e8b;margin-right:24px}table{border-collapse:collapse;background:white;width:100%;margin:22px 0}td,th{padding:16px;text-align:left;border-bottom:1px solid #d2e1e5}</style><main><small>AIMLCZG523 / MLOPS ASSIGNMENT 01 / MEASURED EVIDENCE</small><h1>Kubernetes deployment verification</h1><nav><a href="overview.html">Overview</a><a href="eda.html">EDA</a><a href="results.html">Models</a><a href="deployment.html">Deployment evidence</a></nav><p>Rendered transcript of actual saved command output. This is an evidence viewer, not a Kubernetes UI.</p><small>kubectl --context kind-heart-mlops -n heart-mlops get deploy,pods,svc,ingress -o wide</small><pre>NAME                        READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES            SELECTOR
+deployment.apps/heart-api   2/2     2            2           76s   api          heart-api:local   app=heart-api
+deployment.apps/traefik     1/1     1            1           75s   traefik      traefik:v3.3.6    app=traefik
+
+NAME                             READY   STATUS    RESTARTS   AGE   IP           NODE                        NOMINATED NODE   READINESS GATES
+pod/heart-api-85488ddf6d-g5lvr   1/1     Running   0          76s   10.244.0.6   heart-mlops-control-plane   &lt;none&gt;           &lt;none&gt;
+pod/heart-api-85488ddf6d-kt868   1/1     Running   0          76s   10.244.0.5   heart-mlops-control-plane   &lt;none&gt;           &lt;none&gt;
+pod/traefik-8684b74f5f-vn2kr     1/1     Running   0          75s   10.244.0.7   heart-mlops-control-plane   &lt;none&gt;           &lt;none&gt;
+
+NAME                TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+service/heart-api   ClusterIP   10.96.119.10   &lt;none&gt;        80/TCP         76s   app=heart-api
+service/traefik     NodePort    10.96.92.84    &lt;none&gt;        80:30080/TCP   75s   app=traefik
+
+NAME                                  CLASS     HOSTS   ADDRESS   PORTS   AGE
+ingress.networking.k8s.io/heart-api   traefik   *                 80      76s
+</pre><small>POST http://127.0.0.1:8080/predict · actual API response</small><pre>{
+  &quot;prediction&quot;: 0,
+  &quot;disease_probability&quot;: 0.432391735603244,
+  &quot;confidence&quot;: 0.5676082643967559,
+  &quot;model_version&quot;: &quot;074c8b3372d9&quot;,
+  &quot;threshold&quot;: 0.5
+}</pre><p>Request path: localhost:8080 → Traefik ingress → Service → 2 API replicas.</p></main></html>

@@ -1,0 +1,157 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  1.268MB
+Step 1/8 : FROM jenkins/jenkins:2.580.1-lts-jdk21
+2.580.1-lts-jdk21: Pulling from jenkins/jenkins
+Digest: sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+Status: Downloaded newer image for jenkins/jenkins:2.580.1-lts-jdk21
+ ---> a660310e39ad
+Step 2/8 : USER root
+ ---> Using cache
+ ---> 3b6aee4bedb9
+Step 3/8 : RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-venv curl && rm -rf /var/lib/apt/lists/*
+ ---> Running in 5376f716b7ec
+Get:1 http://deb.debian.org/debian trixie InRelease [140 kB]
+Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+Get:4 http://deb.debian.org/debian trixie/main arm64 Packages [9614 kB]
+Get:5 http://deb.debian.org/debian trixie-updates/main arm64 Packages [4424 B]
+Get:6 http://deb.debian.org/debian-security trixie-security/main arm64 Packages [264 kB]
+Fetched 10.1 MB in 1s (8797 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+curl is already the newest version (8.14.1-2+deb13u5).
+The following additional packages will be installed:
+  libpython3-stdlib libpython3.13-minimal libpython3.13-stdlib libreadline8t64
+  media-types netbase python3-minimal python3-pip-whl python3-setuptools-whl
+  python3.13 python3.13-minimal python3.13-venv readline-common
+Suggested packages:
+  python3-doc python3-tk python3.13-doc binutils binfmt-support readline-doc
+The following NEW packages will be installed:
+  libpython3-stdlib libpython3.13-minimal libpython3.13-stdlib libreadline8t64
+  media-types netbase python3 python3-minimal python3-pip-whl
+  python3-setuptools-whl python3-venv python3.13 python3.13-minimal
+  python3.13-venv readline-common
+0 upgraded, 15 newly installed, 0 to remove and 1 not upgraded.
+Need to get 8635 kB of archives.
+After this operation, 28.0 MB of additional disk space will be used.
+Get:1 http://deb.debian.org/debian trixie/main arm64 libpython3.13-minimal arm64 3.13.5-2+deb13u5 [856 kB]
+Get:2 http://deb.debian.org/debian trixie/main arm64 python3.13-minimal arm64 3.13.5-2+deb13u5 [2008 kB]
+Get:3 http://deb.debian.org/debian trixie/main arm64 python3-minimal arm64 3.13.5-1 [27.2 kB]
+Get:4 http://deb.debian.org/debian trixie/main arm64 media-types all 13.0.0 [29.3 kB]
+Get:5 http://deb.debian.org/debian trixie/main arm64 netbase all 6.5 [12.4 kB]
+Get:6 http://deb.debian.org/debian trixie/main arm64 readline-common all 8.2-6 [69.4 kB]
+Get:7 http://deb.debian.org/debian trixie/main arm64 libreadline8t64 arm64 8.2-6 [159 kB]
+Get:8 http://deb.debian.org/debian trixie/main arm64 libpython3.13-stdlib arm64 3.13.5-2+deb13u5 [1895 kB]
+Get:9 http://deb.debian.org/debian trixie/main arm64 python3.13 arm64 3.13.5-2+deb13u5 [757 kB]
+Get:10 http://deb.debian.org/debian trixie/main arm64 libpython3-stdlib arm64 3.13.5-1 [10.2 kB]
+Get:11 http://deb.debian.org/debian trixie/main arm64 python3 arm64 3.13.5-1 [28.2 kB]
+Get:12 http://deb.debian.org/debian trixie/main arm64 python3-pip-whl all 25.1.1+dfsg-1 [1507 kB]
+Get:13 http://deb.debian.org/debian trixie/main arm64 python3-setuptools-whl all 78.1.1-0.1 [1268 kB]
+Get:14 http://deb.debian.org/debian trixie/main arm64 python3.13-venv arm64 3.13.5-2+deb13u5 [5476 B]
+Get:15 http://deb.debian.org/debian trixie/main arm64 python3-venv arm64 3.13.5-1 [1180 B]
+[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+[0m[91mdebconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+[0m[91mdebconf: unable to initialize frontend: Teletype
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Noninteractive
+[0mFetched 8635 kB in 0s (21.5 MB/s)
+Selecting previously unselected package libpython3.13-minimal:arm64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9628 files and directories currently installed.)
+Preparing to unpack .../libpython3.13-minimal_3.13.5-2+deb13u5_arm64.deb ...
+Unpacking libpython3.13-minimal:arm64 (3.13.5-2+deb13u5) ...
+Selecting previously unselected package python3.13-minimal.
+Preparing to unpack .../python3.13-minimal_3.13.5-2+deb13u5_arm64.deb ...
+Unpacking python3.13-minimal (3.13.5-2+deb13u5) ...
+Setting up libpython3.13-minimal:arm64 (3.13.5-2+deb13u5) ...
+Setting up python3.13-minimal (3.13.5-2+deb13u5) ...
+Selecting previously unselected package python3-minimal.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 9953 files and directories currently installed.)
+Preparing to unpack .../0-python3-minimal_3.13.5-1_arm64.deb ...
+Unpacking python3-minimal (3.13.5-1) ...
+Selecting previously unselected package media-types.
+Preparing to unpack .../1-media-types_13.0.0_all.deb ...
+Unpacking media-types (13.0.0) ...
+Selecting previously unselected package netbase.
+Preparing to unpack .../2-netbase_6.5_all.deb ...
+Unpacking netbase (6.5) ...
+Selecting previously unselected package readline-common.
+Preparing to unpack .../3-readline-common_8.2-6_all.deb ...
+Unpacking readline-common (8.2-6) ...
+Selecting previously unselected package libreadline8t64:arm64.
+Preparing to unpack .../4-libreadline8t64_8.2-6_arm64.deb ...
+Adding 'diversion of /lib/aarch64-linux-gnu/libhistory.so.8 to /lib/aarch64-linux-gnu/libhistory.so.8.usr-is-merged by libreadline8t64'
+Adding 'diversion of /lib/aarch64-linux-gnu/libhistory.so.8.2 to /lib/aarch64-linux-gnu/libhistory.so.8.2.usr-is-merged by libreadline8t64'
+Adding 'diversion of /lib/aarch64-linux-gnu/libreadline.so.8 to /lib/aarch64-linux-gnu/libreadline.so.8.usr-is-merged by libreadline8t64'
+Adding 'diversion of /lib/aarch64-linux-gnu/libreadline.so.8.2 to /lib/aarch64-linux-gnu/libreadline.so.8.2.usr-is-merged by libreadline8t64'
+Unpacking libreadline8t64:arm64 (8.2-6) ...
+Selecting previously unselected package libpython3.13-stdlib:arm64.
+Preparing to unpack .../5-libpython3.13-stdlib_3.13.5-2+deb13u5_arm64.deb ...
+Unpacking libpython3.13-stdlib:arm64 (3.13.5-2+deb13u5) ...
+Selecting previously unselected package python3.13.
+Preparing to unpack .../6-python3.13_3.13.5-2+deb13u5_arm64.deb ...
+Unpacking python3.13 (3.13.5-2+deb13u5) ...
+Selecting previously unselected package libpython3-stdlib:arm64.
+Preparing to unpack .../7-libpython3-stdlib_3.13.5-1_arm64.deb ...
+Unpacking libpython3-stdlib:arm64 (3.13.5-1) ...
+Setting up python3-minimal (3.13.5-1) ...
+Selecting previously unselected package python3.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10446 files and directories currently installed.)
+Preparing to unpack .../python3_3.13.5-1_arm64.deb ...
+Unpacking python3 (3.13.5-1) ...
+Selecting previously unselected package python3-pip-whl.
+Preparing to unpack .../python3-pip-whl_25.1.1+dfsg-1_all.deb ...
+Unpacking python3-pip-whl (25.1.1+dfsg-1) ...
+Selecting previously unselected package python3-setuptools-whl.
+Preparing to unpack .../python3-setuptools-whl_78.1.1-0.1_all.deb ...
+Unpacking python3-setuptools-whl (78.1.1-0.1) ...
+Selecting previously unselected package python3.13-venv.
+Preparing to unpack .../python3.13-venv_3.13.5-2+deb13u5_arm64.deb ...
+Unpacking python3.13-venv (3.13.5-2+deb13u5) ...
+Selecting previously unselected package python3-venv.
+Preparing to unpack .../python3-venv_3.13.5-1_arm64.deb ...
+Unpacking python3-venv (3.13.5-1) ...
+Setting up media-types (13.0.0) ...
+Setting up python3-setuptools-whl (78.1.1-0.1) ...
+Setting up python3-pip-whl (25.1.1+dfsg-1) ...
+Setting up netbase (6.5) ...
+Setting up readline-common (8.2-6) ...
+Setting up libreadline8t64:arm64 (8.2-6) ...
+Setting up libpython3.13-stdlib:arm64 (3.13.5-2+deb13u5) ...
+Setting up libpython3-stdlib:arm64 (3.13.5-1) ...
+Setting up python3.13 (3.13.5-2+deb13u5) ...
+Setting up python3 (3.13.5-1) ...
+running python rtupdate hooks for python3.13...
+running python post-rtupdate hooks for python3.13...
+Setting up python3.13-venv (3.13.5-2+deb13u5) ...
+Setting up python3-venv (3.13.5-1) ...
+Processing triggers for libc-bin (2.41-12+deb13u4) ...
+ ---> Removed intermediate container 5376f716b7ec
+ ---> 4893692237ba
+Step 4/8 : RUN jenkins-plugin-cli --plugins workflow-aggregator junit
+ ---> Running in 38ce08ba0bdd
+[91mDone
+[0m ---> Removed intermediate container 38ce08ba0bdd
+ ---> 0d237030d5ae
+Step 5/8 : COPY ci/init.groovy /usr/share/jenkins/ref/init.groovy.d/assignment.groovy
+ ---> a287b003818c
+Step 6/8 : ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+ ---> Running in 24359fe218ff
+ ---> Removed intermediate container 24359fe218ff
+ ---> aa049535ffbf
+Step 7/8 : COPY . /submission
+ ---> 8b481bd203f8
+Step 8/8 : USER jenkins
+ ---> Running in 948c9059facc
+ ---> Removed intermediate container 948c9059facc
+ ---> 738aca1b0494
+Successfully built 738aca1b0494
+Successfully tagged heart-jenkins:local

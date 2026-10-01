@@ -1,0 +1,138 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  1.296MB
+Step 1/12 : FROM python:3.13.3-slim
+ ---> 56a11364ffe0
+Step 2/12 : ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PYTHONPATH=/app/src
+ ---> Using cache
+ ---> 556c54000778
+Step 3/12 : WORKDIR /app
+ ---> Using cache
+ ---> 278bd6cb81e8
+Step 4/12 : COPY requirements-serve.txt .
+ ---> Using cache
+ ---> a8294df145a0
+Step 5/12 : RUN pip install --no-cache-dir -r requirements-serve.txt && useradd --uid 10001 --create-home appuser
+ ---> Using cache
+ ---> a2a8b355785a
+Step 6/12 : COPY src ./src
+ ---> 504f8f80da9c
+Step 7/12 : COPY models ./models
+ ---> f83377b6bff6
+Step 8/12 : COPY monitoring ./monitoring
+ ---> b20b360a4a25
+Step 9/12 : USER 10001
+ ---> Running in 2356bb3242d1
+ ---> Removed intermediate container 2356bb3242d1
+ ---> d32eda781da1
+Step 10/12 : EXPOSE 8000
+ ---> Running in 85d47811b9a7
+ ---> Removed intermediate container 85d47811b9a7
+ ---> 6806038e7abb
+Step 11/12 : HEALTHCHECK --interval=15s --timeout=3s --start-period=20s --retries=3 CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready',timeout=2)"
+ ---> Running in 08caae33d983
+ ---> Removed intermediate container 08caae33d983
+ ---> acbe3eaba1f7
+Step 12/12 : CMD ["uvicorn","heart.api:app","--host","0.0.0.0","--port","8000","--no-access-log"]
+ ---> Running in 69b08913ee10
+ ---> Removed intermediate container 69b08913ee10
+ ---> eb53f4897b3d
+Successfully built eb53f4897b3d
+Successfully tagged heart-api:release-074c8b3372d9
+{"status":"ready","model_version":"074c8b3372d9"}{
+  "prediction": 0,
+  "disease_probability": 0.432391735603244,
+  "confidence": 0.5676082643967559,
+  "model_version": "074c8b3372d9",
+  "threshold": 0.5
+}
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 618.0
+python_gc_objects_collected_total{generation="1"} 10.0
+python_gc_objects_collected_total{generation="2"} 0.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 116.0
+python_gc_collections_total{generation="1"} 10.0
+python_gc_collections_total{generation="2"} 0.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="13",patchlevel="3",version="3.13.3"} 1.0
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 6.74177024e+08
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 1.7119232e+08
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.79083402804e+09
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 1.3800000000000001
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 9.0
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1024.0
+# HELP heart_requests_total HTTP requests
+# TYPE heart_requests_total counter
+heart_requests_total{route="/ready",status="200"} 1.0
+heart_requests_total{route="/predict",status="200"} 1.0
+# HELP heart_requests_created HTTP requests
+# TYPE heart_requests_created gauge
+heart_requests_created{route="/ready",status="200"} 1.7908340309618235e+09
+heart_requests_created{route="/predict",status="200"} 1.7908340310681512e+09
+# HELP heart_request_seconds HTTP latency
+# TYPE heart_request_seconds histogram
+heart_request_seconds_bucket{le="0.005",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.01",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.025",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.05",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.1",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.25",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.5",route="/ready"} 1.0
+heart_request_seconds_bucket{le="1.0",route="/ready"} 1.0
+heart_request_seconds_bucket{le="2.0",route="/ready"} 1.0
+heart_request_seconds_bucket{le="+Inf",route="/ready"} 1.0
+heart_request_seconds_count{route="/ready"} 1.0
+heart_request_seconds_sum{route="/ready"} 0.0007768349998968915
+heart_request_seconds_bucket{le="0.005",route="/predict"} 0.0
+heart_request_seconds_bucket{le="0.01",route="/predict"} 1.0
+heart_request_seconds_bucket{le="0.025",route="/predict"} 1.0
+heart_request_seconds_bucket{le="0.05",route="/predict"} 1.0
+heart_request_seconds_bucket{le="0.1",route="/predict"} 1.0
+heart_request_seconds_bucket{le="0.25",route="/predict"} 1.0
+heart_request_seconds_bucket{le="0.5",route="/predict"} 1.0
+heart_request_seconds_bucket{le="1.0",route="/predict"} 1.0
+heart_request_seconds_bucket{le="2.0",route="/predict"} 1.0
+heart_request_seconds_bucket{le="+Inf",route="/predict"} 1.0
+heart_request_seconds_count{route="/predict"} 1.0
+heart_request_seconds_sum{route="/predict"} 0.00550447599994186
+# HELP heart_request_seconds_created HTTP latency
+# TYPE heart_request_seconds_created gauge
+heart_request_seconds_created{route="/ready"} 1.7908340309618473e+09
+heart_request_seconds_created{route="/predict"} 1.790834031068161e+09
+# HELP heart_predictions_total Predicted classes
+# TYPE heart_predictions_total counter
+heart_predictions_total{label="0"} 1.0
+# HELP heart_predictions_created Predicted classes
+# TYPE heart_predictions_created gauge
+heart_predictions_created{label="0"} 1.7908340310679352e+09
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+{"event": "http_request", "request_id": "d52db020-c265-4bb3-8daf-aabadaa41f03", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.777}
+{"event": "http_request", "request_id": "a849ce49-928d-4911-9fdc-06560c74fe01", "method": "POST", "route": "/predict", "status": 200, "duration_ms": 5.504}
+{"event": "http_request", "request_id": "923a2b24-e44a-4e1e-8858-ac34d65b4a15", "method": "GET", "route": "/metrics", "status": 200, "duration_ms": 0.734}
+dc62b46ecf3751e57116b563df610fd3fc27735d325b7254d97abaedccc777be

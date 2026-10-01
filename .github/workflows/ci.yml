@@ -1,0 +1,71 @@
+name: Heart MLOps CI and local Kubernetes delivery
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: heart-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify-train-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      MPLBACKEND: Agg
+      PYTHONUNBUFFERED: '1'
+      IMAGE: heart-api:${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - name: Install exact direct dependencies
+        run: pip install -r requirements.txt -e .
+      - name: Lint (fails on errors)
+        run: ruff check .
+      - name: Acquire and validate data
+        run: python -m heart.data
+      - name: Data and model unit tests
+        run: pytest test/test_data.py test/test_model.py --junitxml=evidence/unit.xml
+      - name: EDA and tracked nested CV training
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m heart.eda
+          python -m heart.train 2>&1 | tee evidence/training.log
+      - name: API tests using newly trained model
+        run: pytest test/test_api.py --junitxml=evidence/api.xml
+      - name: Container build and isolated smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash scripts/container-smoke.sh 2>&1 | tee evidence/docker.log
+      - name: Install kind
+        run: |
+          curl -fsSLo /tmp/kind https://kind.sigs.k8s.io/dl/v0.27.0/kind-linux-amd64
+          chmod +x /tmp/kind
+          sudo mv /tmp/kind /usr/local/bin/kind
+      - name: Deploy to local Kubernetes and verify ingress
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash scripts/deploy-local.sh 2>&1 | tee evidence/kubernetes.log
+      - name: Collect cluster diagnostics
+        if: always()
+        run: |
+          kubectl --context kind-heart-mlops -n heart-mlops get all,ingress -o wide > evidence/cluster.txt 2>&1 || true
+          kubectl --context kind-heart-mlops -n heart-mlops logs -l app=heart-api --tail=100 > evidence/api.log 2>&1 || true
+      - name: Preserve models, reports, runs and logs even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: heart-evidence-${{ github.sha }}
+          path: |
+            models/
+            reports/
+            mlruns/
+            evidence/
+          retention-days: 14

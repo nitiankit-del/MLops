@@ -1,0 +1,8 @@
+FROM jenkins/jenkins:2.580.1-lts-jdk21
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends python3 python3-venv curl && rm -rf /var/lib/apt/lists/*
+RUN jenkins-plugin-cli --plugins workflow-aggregator junit
+COPY ci/init.groovy /usr/share/jenkins/ref/init.groovy.d/assignment.groovy
+ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+COPY . /submission
+USER jenkins

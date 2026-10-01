@@ -1,0 +1,13 @@
+{
+  "pdf_pages": 10,
+  "pytest_passed": 26,
+  "jenkins_build": 3,
+  "jenkins_result": "SUCCESS",
+  "model_sha256": "074c8b3372d9cd85679c93d4ae5b948737e64e315feaba508b56d963496ddd49",
+  "container_verified": true,
+  "kubernetes_replicas": 2,
+  "video_seconds": 97.12,
+  "github_published": false,
+  "student_details_provided": false,
+  "report_sha256": "b0ef286843ecb13017d2bd3a555bb2678770694579ec1c9daa984a56078faa90"
+}

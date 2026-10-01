@@ -1,0 +1,12 @@
+{
+  "verification": "passed",
+  "holdout_rows": 61,
+  "model_sha256": "074c8b3372d9cd85679c93d4ae5b948737e64e315feaba508b56d963496ddd49",
+  "recomputed_metrics": {
+    "accuracy": 0.8032786885245902,
+    "precision": 0.7666666666666667,
+    "recall": 0.8214285714285714,
+    "f1": 0.7931034482758621,
+    "roc_auc": 0.9231601731601732
+  }
+}

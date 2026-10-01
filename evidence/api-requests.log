@@ -1,0 +1,63 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+{"event": "http_request", "request_id": "3cd0a233-1e3c-41f9-bf41-051c8550b59a", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.896}
+{"event": "http_request", "request_id": "c01a5677-b74b-484b-88d4-9584adbd554d", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.644}
+{"event": "http_request", "request_id": "438c3f3c-0bee-4160-b66f-4348cbf14696", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.625}
+{"event": "http_request", "request_id": "4067ad37-b714-4094-9b3f-ae6a96770215", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.441}
+{"event": "http_request", "request_id": "ded4b591-3127-4884-ae2e-0fc7c0aa1b4c", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.898}
+{"event": "http_request", "request_id": "bbc6c08c-e5a4-4757-aff7-a42bff5f7f90", "method": "GET", "route": "/health", "status": 200, "duration_ms": 0.933}
+{"event": "http_request", "request_id": "2fb9cd3d-7460-4241-b597-8e164358c903", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.325}
+{"event": "http_request", "request_id": "77a8f3f8-e694-4f43-9a17-3d67f30666e6", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.84}
+{"event": "http_request", "request_id": "62de4a62-9364-44e0-addd-2c2764a19f29", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.403}
+{"event": "http_request", "request_id": "3d8a5014-7ea2-4220-b9c1-983ded05bfdf", "method": "GET", "route": "/health", "status": 200, "duration_ms": 0.366}
+{"event": "http_request", "request_id": "863dd4cb-89bd-4b5d-ad3b-d747046e759a", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.811}
+{"event": "http_request", "request_id": "f3fe7bbe-3acd-4ddb-b5d1-b41d29622a5a", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.374}
+{"event": "http_request", "request_id": "b36d47f9-d8d7-4fd8-b4df-d20234828329", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.871}
+{"event": "http_request", "request_id": "bd0beeca-8881-4ab5-9e68-fe258a30b0c0", "method": "GET", "route": "/health", "status": 200, "duration_ms": 0.942}
+{"event": "http_request", "request_id": "fb899f94-2b55-4502-a608-3dcc2af537f5", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.608}
+{"event": "http_request", "request_id": "b89f404b-253a-407e-82cc-5a8abef02d6a", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.614}
+{"event": "http_request", "request_id": "d5627aa6-9a73-4cd0-8cca-8d95a0031142", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.324}
+{"event": "http_request", "request_id": "effc80a5-95aa-4387-8e3c-c18caf14ac7c", "method": "GET", "route": "/health", "status": 200, "duration_ms": 0.268}
+{"event": "http_request", "request_id": "7ff3704c-0eaf-41f9-9a9b-40b6f9185b08", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.47}
+{"event": "http_request", "request_id": "20cd55b0-d0c6-46e2-84fd-e1b880474157", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.67}
+{"event": "http_request", "request_id": "e1977f72-af08-4cf6-9092-6a5020c065df", "method": "GET", "route": "/monitor", "status": 200, "duration_ms": 4.869}
+{"event": "http_request", "request_id": "ffa4fe52-183b-44cb-af54-f04d86b06d93", "method": "GET", "route": "/metrics", "status": 200, "duration_ms": 2.234}
+{"event": "http_request", "request_id": "daf19ae9-6651-4843-bb3b-65192a7f1164", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.431}
+{"event": "http_request", "request_id": "c9398d83-18a4-4879-b6d8-5bb8e59c4bb3", "method": "POST", "route": "/predict", "status": 200, "duration_ms": 13.468}
+{"event": "http_request", "request_id": "888672c0-b148-4a35-bad8-a24adad63841", "method": "GET", "route": "/metrics", "status": 200, "duration_ms": 0.969}
+{"event": "http_request", "request_id": "88b46878-a39f-4c67-ad5e-52bd7490e727", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.529}
+{"event": "http_request", "request_id": "b60c9fe2-e010-470e-aff1-561677ed628f", "method": "GET", "route": "/health", "status": 200, "duration_ms": 0.659}
+{"event": "http_request", "request_id": "37dc17b9-9542-43ea-902d-0338d1847b48", "method": "GET", "route": "unmatched", "status": 200, "duration_ms": 0.304}
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+{"event": "http_request", "request_id": "506507ed-f3e6-43ff-aa0d-37f943107979", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.907}
+{"event": "http_request", "request_id": "4fc99d57-47fe-45cf-b982-cfb5da59ff62", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.606}
+{"event": "http_request", "request_id": "8bb45af5-511d-42e0-bb8b-986b58d14f28", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.544}
+{"event": "http_request", "request_id": "40d406a2-c378-4f41-a3e5-546fc6119a68", "method": "POST", "route": "/predict", "status": 200, "duration_ms": 6.185}
+{"event": "http_request", "request_id": "ac40db03-74d5-4cd1-bdfc-3626a07c3c7a", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.857}
+{"event": "http_request", "request_id": "4788eb88-feb9-4bbf-b25c-814f90421fae", "method": "GET", "route": "/health", "status": 200, "duration_ms": 1.174}
+{"event": "http_request", "request_id": "e1819084-a02b-4c3c-8014-d7e9c6a46dbe", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.316}
+{"event": "http_request", "request_id": "d0fe1b37-a723-4262-a876-f7ba157a15f0", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.95}
+{"event": "http_request", "request_id": "eac1f9e0-e72a-4e55-9043-52bdd08c46fa", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.339}
+{"event": "http_request", "request_id": "5e135224-0a83-49e4-ad0b-0fc31c50bde4", "method": "GET", "route": "/health", "status": 200, "duration_ms": 0.362}
+{"event": "http_request", "request_id": "c315b3e5-a6dc-4728-83c1-5731471b1b9f", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.351}
+{"event": "http_request", "request_id": "95102019-c9ac-4f4b-9943-c04ad2eca1f9", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.339}
+{"event": "http_request", "request_id": "c3c05e24-a8d4-4621-808f-255f4272f4c2", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.905}
+{"event": "http_request", "request_id": "fea07b2a-7a20-4904-b34d-8e999a352381", "method": "GET", "route": "/health", "status": 200, "duration_ms": 0.845}
+{"event": "http_request", "request_id": "723f8e81-1663-4016-b266-d3922d69a222", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.377}
+{"event": "http_request", "request_id": "52f22cfe-81b7-48d0-a4ed-969e5ef023dc", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.91}
+{"event": "http_request", "request_id": "d50a3ff0-2b88-41db-a2de-2ff7fbdc5586", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.383}
+{"event": "http_request", "request_id": "24b0e92c-c2f8-4a88-818e-3e764705be15", "method": "GET", "route": "/health", "status": 200, "duration_ms": 0.367}
+{"event": "http_request", "request_id": "6ffd5842-aedb-49a5-baa9-7967d76b978e", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.449}
+{"event": "http_request", "request_id": "73882598-0309-4a2b-a9cb-ec77e230db95", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.652}
+{"event": "http_request", "request_id": "e845ef72-05a7-430c-8d1d-60dcf2d21a98", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.855}
+{"event": "http_request", "request_id": "d0ac786e-2a83-404c-892d-d2bf0f58362b", "method": "GET", "route": "unmatched", "status": 404, "duration_ms": 0.413}
+{"event": "http_request", "request_id": "f603d163-c58e-41c7-a1ce-8174c8fafc88", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.815}
+{"event": "http_request", "request_id": "fd153f71-c939-4555-982c-af5e2c35f9b5", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.832}
+{"event": "http_request", "request_id": "22f37dd7-bd06-4088-8a20-5d4a7f4338b7", "method": "POST", "route": "/predict", "status": 422, "duration_ms": 1.38}
+{"event": "http_request", "request_id": "0dcecf00-5ee1-4f49-a59b-a6421760f566", "method": "GET", "route": "/metrics", "status": 200, "duration_ms": 1.665}
+{"event": "http_request", "request_id": "c9756c45-ef29-4a21-9e22-c7232e105417", "method": "GET", "route": "/health", "status": 200, "duration_ms": 0.503}

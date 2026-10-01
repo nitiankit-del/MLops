@@ -1,0 +1,237 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  93.18kB
+Step 1/12 : FROM python:3.13.3-slim
+3.13.3-slim: Pulling from library/python
+b16f1b166780: Pulling fs layer
+b4626800aece: Pulling fs layer
+a83bc4269c1b: Pulling fs layer
+6834df5f0b1a: Pulling fs layer
+b4626800aece: Download complete
+6834df5f0b1a: Download complete
+a83bc4269c1b: Download complete
+b16f1b166780: Download complete
+b16f1b166780: Pull complete
+a83bc4269c1b: Pull complete
+b4626800aece: Pull complete
+6834df5f0b1a: Pull complete
+07c2fa9881a1: Download complete
+3f6969cf0ca4: Download complete
+Digest: sha256:56a11364ffe0fee3bd60af6d6d5209eba8a99c2c16dc4c7c5861dc06261503cc
+Status: Downloaded newer image for python:3.13.3-slim
+ ---> 56a11364ffe0
+Step 2/12 : ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PYTHONPATH=/app/src
+ ---> Running in 690fcb4fd656
+ ---> Removed intermediate container 690fcb4fd656
+ ---> 556c54000778
+Step 3/12 : WORKDIR /app
+ ---> Running in 0decd878c252
+ ---> Removed intermediate container 0decd878c252
+ ---> 278bd6cb81e8
+Step 4/12 : COPY requirements-serve.txt .
+ ---> a8294df145a0
+Step 5/12 : RUN pip install --no-cache-dir -r requirements-serve.txt && useradd --uid 10001 --create-home appuser
+ ---> Running in dff3ed5bd20c
+Collecting numpy==2.2.6 (from -r requirements-serve.txt (line 1))
+  Downloading numpy-2.2.6-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (63 kB)
+Collecting pandas==2.2.3 (from -r requirements-serve.txt (line 2))
+  Downloading pandas-2.2.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl.metadata (89 kB)
+Collecting scikit-learn==1.6.1 (from -r requirements-serve.txt (line 3))
+  Downloading scikit_learn-1.6.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (18 kB)
+Collecting fastapi==0.115.12 (from -r requirements-serve.txt (line 4))
+  Downloading fastapi-0.115.12-py3-none-any.whl.metadata (27 kB)
+Collecting uvicorn==0.34.2 (from -r requirements-serve.txt (line 5))
+  Downloading uvicorn-0.34.2-py3-none-any.whl.metadata (6.5 kB)
+Collecting prometheus-client==0.22.0 (from -r requirements-serve.txt (line 6))
+  Downloading prometheus_client-0.22.0-py3-none-any.whl.metadata (14 kB)
+Collecting joblib==1.5.1 (from -r requirements-serve.txt (line 7))
+  Downloading joblib-1.5.1-py3-none-any.whl.metadata (5.6 kB)
+Collecting pydantic==2.11.4 (from -r requirements-serve.txt (line 8))
+  Downloading pydantic-2.11.4-py3-none-any.whl.metadata (66 kB)
+Collecting scipy==1.15.3 (from -r requirements-serve.txt (line 9))
+  Downloading scipy-1.15.3-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (61 kB)
+Collecting python-dateutil>=2.8.2 (from pandas==2.2.3->-r requirements-serve.txt (line 2))
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pytz>=2020.1 (from pandas==2.2.3->-r requirements-serve.txt (line 2))
+  Downloading pytz-2026.4-py2.py3-none-any.whl.metadata (22 kB)
+Collecting tzdata>=2022.7 (from pandas==2.2.3->-r requirements-serve.txt (line 2))
+  Downloading tzdata-2026.4-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting threadpoolctl>=3.1.0 (from scikit-learn==1.6.1->-r requirements-serve.txt (line 3))
+  Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+Collecting starlette<0.47.0,>=0.40.0 (from fastapi==0.115.12->-r requirements-serve.txt (line 4))
+  Downloading starlette-0.46.2-py3-none-any.whl.metadata (6.2 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi==0.115.12->-r requirements-serve.txt (line 4))
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting click>=7.0 (from uvicorn==0.34.2->-r requirements-serve.txt (line 5))
+  Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn==0.34.2->-r requirements-serve.txt (line 5))
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting annotated-types>=0.6.0 (from pydantic==2.11.4->-r requirements-serve.txt (line 8))
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.33.2 (from pydantic==2.11.4->-r requirements-serve.txt (line 8))
+  Downloading pydantic_core-2.33.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.8 kB)
+Collecting typing-inspection>=0.4.0 (from pydantic==2.11.4->-r requirements-serve.txt (line 8))
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas==2.2.3->-r requirements-serve.txt (line 2))
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting anyio<5,>=3.6.2 (from starlette<0.47.0,>=0.40.0->fastapi==0.115.12->-r requirements-serve.txt (line 4))
+  Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting idna>=2.8 (from anyio<5,>=3.6.2->starlette<0.47.0,>=0.40.0->fastapi==0.115.12->-r requirements-serve.txt (line 4))
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Downloading numpy-2.2.6-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (14.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.0/14.0 MB 53.7 MB/s eta 0:00:00
+Downloading pandas-2.2.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl (15.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.2/15.2 MB 49.6 MB/s eta 0:00:00
+Downloading scikit_learn-1.6.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (12.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 11.4 MB/s eta 0:00:00
+Downloading fastapi-0.115.12-py3-none-any.whl (95 kB)
+Downloading uvicorn-0.34.2-py3-none-any.whl (62 kB)
+Downloading prometheus_client-0.22.0-py3-none-any.whl (62 kB)
+Downloading joblib-1.5.1-py3-none-any.whl (307 kB)
+Downloading pydantic-2.11.4-py3-none-any.whl (443 kB)
+Downloading scipy-1.15.3-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (35.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.2/35.2 MB 16.8 MB/s eta 0:00:00
+Downloading pydantic_core-2.33.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 12.2 MB/s eta 0:00:00
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading click-8.5.0-py3-none-any.whl (125 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading pytz-2026.4-py2.py3-none-any.whl (506 kB)
+Downloading starlette-0.46.2-py3-none-any.whl (72 kB)
+Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Downloading tzdata-2026.4-py2.py3-none-any.whl (347 kB)
+Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Installing collected packages: pytz, tzdata, typing-extensions, threadpoolctl, six, prometheus-client, numpy, joblib, idna, h11, click, annotated-types, uvicorn, typing-inspection, scipy, python-dateutil, pydantic-core, anyio, starlette, scikit-learn, pydantic, pandas, fastapi
+Successfully installed annotated-types-0.8.0 anyio-4.15.1 click-8.5.0 fastapi-0.115.12 h11-0.16.0 idna-3.20 joblib-1.5.1 numpy-2.2.6 pandas-2.2.3 prometheus-client-0.22.0 pydantic-2.11.4 pydantic-core-2.33.2 python-dateutil-2.9.0.post0 pytz-2026.4 scikit-learn-1.6.1 scipy-1.15.3 six-1.17.0 starlette-0.46.2 threadpoolctl-3.7.0 typing-extensions-4.16.0 typing-inspection-0.4.4 tzdata-2026.4 uvicorn-0.34.2
+[91mWARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[0m[91m
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: pip install --upgrade pip
+[0m ---> Removed intermediate container dff3ed5bd20c
+ ---> a2a8b355785a
+Step 6/12 : COPY src ./src
+ ---> f20b8efd827a
+Step 7/12 : COPY models ./models
+ ---> 23c91ac4d6f0
+Step 8/12 : COPY monitoring ./monitoring
+ ---> 47f3e44917dc
+Step 9/12 : USER 10001
+ ---> Running in d498a8b6ac23
+ ---> Removed intermediate container d498a8b6ac23
+ ---> c93f8c2ea8c5
+Step 10/12 : EXPOSE 8000
+ ---> Running in 2c895e6fb8e8
+ ---> Removed intermediate container 2c895e6fb8e8
+ ---> 7f7b6767be99
+Step 11/12 : HEALTHCHECK --interval=15s --timeout=3s --start-period=20s --retries=3 CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready',timeout=2)"
+ ---> Running in bf0c81e9eec7
+ ---> Removed intermediate container bf0c81e9eec7
+ ---> 5f99deab04f8
+Step 12/12 : CMD ["uvicorn","heart.api:app","--host","0.0.0.0","--port","8000","--no-access-log"]
+ ---> Running in 6ec00788571d
+ ---> Removed intermediate container 6ec00788571d
+ ---> 7a21a5300a16
+Successfully built 7a21a5300a16
+Successfully tagged heart-api:local
+{"status":"ready","model_version":"074c8b3372d9"}{
+  "prediction": 0,
+  "disease_probability": 0.432391735603244,
+  "confidence": 0.5676082643967559,
+  "model_version": "074c8b3372d9",
+  "threshold": 0.5
+}
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 618.0
+python_gc_objects_collected_total{generation="1"} 10.0
+python_gc_objects_collected_total{generation="2"} 0.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 116.0
+python_gc_collections_total{generation="1"} 10.0
+python_gc_collections_total{generation="2"} 0.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="13",patchlevel="3",version="3.13.3"} 1.0
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 6.74168832e+08
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 1.71311104e+08
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.79083296194e+09
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 1.47
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 9.0
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1024.0
+# HELP heart_requests_total HTTP requests
+# TYPE heart_requests_total counter
+heart_requests_total{route="/ready",status="200"} 1.0
+heart_requests_total{route="/predict",status="200"} 1.0
+# HELP heart_requests_created HTTP requests
+# TYPE heart_requests_created gauge
+heart_requests_created{route="/ready",status="200"} 1.7908329655083842e+09
+heart_requests_created{route="/predict",status="200"} 1.7908329656044803e+09
+# HELP heart_request_seconds HTTP latency
+# TYPE heart_request_seconds histogram
+heart_request_seconds_bucket{le="0.005",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.01",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.025",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.05",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.1",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.25",route="/ready"} 1.0
+heart_request_seconds_bucket{le="0.5",route="/ready"} 1.0
+heart_request_seconds_bucket{le="1.0",route="/ready"} 1.0
+heart_request_seconds_bucket{le="2.0",route="/ready"} 1.0
+heart_request_seconds_bucket{le="+Inf",route="/ready"} 1.0
+heart_request_seconds_count{route="/ready"} 1.0
+heart_request_seconds_sum{route="/ready"} 0.0007032529999833059
+heart_request_seconds_bucket{le="0.005",route="/predict"} 0.0
+heart_request_seconds_bucket{le="0.01",route="/predict"} 1.0
+heart_request_seconds_bucket{le="0.025",route="/predict"} 1.0
+heart_request_seconds_bucket{le="0.05",route="/predict"} 1.0
+heart_request_seconds_bucket{le="0.1",route="/predict"} 1.0
+heart_request_seconds_bucket{le="0.25",route="/predict"} 1.0
+heart_request_seconds_bucket{le="0.5",route="/predict"} 1.0
+heart_request_seconds_bucket{le="1.0",route="/predict"} 1.0
+heart_request_seconds_bucket{le="2.0",route="/predict"} 1.0
+heart_request_seconds_bucket{le="+Inf",route="/predict"} 1.0
+heart_request_seconds_count{route="/predict"} 1.0
+heart_request_seconds_sum{route="/predict"} 0.0057112320000101136
+# HELP heart_request_seconds_created HTTP latency
+# TYPE heart_request_seconds_created gauge
+heart_request_seconds_created{route="/ready"} 1.790832965508409e+09
+heart_request_seconds_created{route="/predict"} 1.7908329656044917e+09
+# HELP heart_predictions_total Predicted classes
+# TYPE heart_predictions_total counter
+heart_predictions_total{label="0"} 1.0
+# HELP heart_predictions_created Predicted classes
+# TYPE heart_predictions_created gauge
+heart_predictions_created{label="0"} 1.7908329656042132e+09
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+{"event": "http_request", "request_id": "0a1acba7-b25c-4645-8340-84abf81e2c46", "method": "GET", "route": "/ready", "status": 200, "duration_ms": 0.703}
+{"event": "http_request", "request_id": "257a7728-4898-4e3f-a682-3d72b9d0036f", "method": "POST", "route": "/predict", "status": 200, "duration_ms": 5.711}
+{"event": "http_request", "request_id": "c53dd433-a275-4d3a-a869-7ab4542f86a4", "method": "GET", "route": "/metrics", "status": 200, "duration_ms": 0.72}
+24919a5e627ff59632b315cc119f97b6e9b4d638081e4c5945a7ecf8b6efb5c8
