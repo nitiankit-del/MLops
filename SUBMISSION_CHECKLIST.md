@@ -17,7 +17,7 @@ This maps requirements to actual files. It is not a promise of a grade.
 
 ## Required handoff items before submitting
 
-- [ ] Provide/authenticate the GitHub account, publish the project and add the **real repository URL** to `submission-details.json`, README and report. An authenticated account and repository destination were not supplied; no hosted repository is claimed.
+- [ ] Authenticate GitHub and push the project to https://github.com/nitiankit-del/MLops. The supplied URL is included in the README, submission details and report; upload remains pending.
 - [x] Student details included: Ankit Kumar Agrawal — 2025AE05620.
 - [ ] Review and understand the work; follow course rules for independent work and any required assistance disclosure. Explain data splitting, fold-local imputation, nested CV, confidence semantics, CI failure handling, and Kubernetes routing yourself.
 - [ ] If using GitHub Actions as the assessed CI instead of the included executed Jenkins alternative, push and retain its actual successful workflow URL/screenshots. The GitHub workflow is provided but no hosted execution is claimed.
@@ -33,7 +33,7 @@ This maps requirements to actual files. It is not a promise of a grade.
 
 ## Add personal details and rebuild report
 
-`submission-details.json` contains the supplied name and student ID. Add the real `repository_url` after publishing, then:
+`submission-details.json` contains the supplied name and student ID. The supplied repository URL is also recorded. To rebuild:
 
 ```bash
 pip install -r requirements-report.txt -e .

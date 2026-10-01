@@ -13,7 +13,7 @@ AIMLCZG523 · reproducible classification, tracked experiments, tested API, cont
 - `reports/results.json`: authoritative measured results.
 - `evidence/`: raw execution logs; `screenshots/`: genuine UI captures and rendered command transcripts.
 
-**Submission status:** the implementation and local execution evidence are provided. GitHub publication needs your account/repository; do not treat a local folder as a hosted repository link. Read the checklist before submitting. Review the implementation and be prepared to explain your own decisions in accordance with the assignment's independent-work requirement.
+**Submission status:** the implementation and local execution evidence are provided. The designated repository is [nitiankit-del/MLops](https://github.com/nitiankit-del/MLops). Upload is pending GitHub authentication. Read the checklist before submitting. Review the implementation and be prepared to explain your own decisions in accordance with the assignment's independent-work requirement.
 
 ## 1. Clean setup
 
@@ -130,11 +130,11 @@ This lightweight dashboard is process-local. With two replicas, requests can lan
 
 ## 9. Publish for submission
 
-Sign into your own GitHub account with `gh auth login` (never put credentials in files). Create the intended repository and push this project. Recommended initial visibility is private, with instructor access granted as required. Run the GitHub Actions workflow and add its real URL/screenshots if using GitHub CI. Put the repository URL in the report and checklist before final submission. No fabricated repository URL or workflow success is supplied.
+Sign into your own GitHub account with `gh auth login` (never put credentials in files). Push this project to the supplied repository: `git push -u origin HEAD:main`. Recommended initial visibility is private, with instructor access granted as required. Run the GitHub Actions workflow and add its real URL/screenshots if using GitHub CI. Put the repository URL in the report and checklist before final submission. No fabricated repository URL or workflow success is supplied.
 
 ## 10. Rebuild the report / repeat the video
 
-Reporting tools are optional for training/serving. Install them with `pip install -r requirements-report.txt -e .`. The report builder reads measured result JSON and genuine screenshots, and produces `output/pdf/MLOps_Assignment_1_Report.pdf`. Your name and student ID are recorded in `submission-details.json`; add the real `repository_url` after publication before regenerating it. Check that the final PDF remains exactly 10 pages.
+Reporting tools are optional for training/serving. Install them with `pip install -r requirements-report.txt -e .`. The report builder reads measured result JSON and genuine screenshots, and produces `output/pdf/MLOps_Assignment_1_Report.pdf`. Your name and student ID are recorded in `submission-details.json`; the supplied repository URL is also recorded there. Check that the final PDF remains exactly 10 pages.
 
 To record the browser walkthrough, start the local API ingress, MLflow UI, Jenkins and `python -m http.server 8765 --bind 127.0.0.1` from this directory. Install Google Chrome and run `python -m playwright install ffmpeg`, then `python scripts/record-walkthrough.py`. It records real browser interactions and converts the recording to MP4. The included 97-second video is captioned and has no audio narration. `screenshots/README.md` identifies the origin of each evidence image.
 

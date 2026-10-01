@@ -388,7 +388,7 @@ P(
 )
 H("Deliverables and final submission check")
 P(
-    "Included: source, cleaned/raw data and downloader, EDA/training/inference scripts, pinned dependencies, serialized model, 26 tests, Dockerfile, GitHub Actions YAML, Jenkinsfile, manifests, execution logs, screenshots, MLflow runs/exports, this 10-page report and reports/pipeline-walkthrough.mp4. README.md gives complete setup, API access, restart and cleanup instructions. Publish the GitHub repository and add its real link and student details before submission if they are still absent.",
+    "Included: source, cleaned/raw data and downloader, EDA/training/inference scripts, pinned dependencies, serialized model, 26 tests, Dockerfile, GitHub Actions YAML, Jenkinsfile, manifests, execution logs, screenshots, MLflow runs/exports, this 10-page report and reports/pipeline-walkthrough.mp4. README.md gives complete setup, API access, restart and cleanup instructions. The supplied repository link and student details are included. Confirm the source files are uploaded and the instructor has repository access before submission.",
     "SmallX",
 )
 H("Sources and implementation references")

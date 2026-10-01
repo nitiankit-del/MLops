@@ -9,7 +9,8 @@
   "video_seconds": 97.12,
   "github_published": false,
   "student_details_provided": true,
-  "report_sha256": "d9e9ec57fdbfbbe8aef566367d68be77234a8f9a963b69a7f4f01cd87273ccf4",
+  "report_sha256": "017fda581682d8e70f6f9b3773f95d06288926b455f8b4c0e638a86444402adc",
   "narrated_video_seconds": 799.0,
-  "narrated_video_full_decode": "passed"
+  "narrated_video_full_decode": "passed",
+  "repository_url": "https://github.com/nitiankit-del/MLops"
 }
