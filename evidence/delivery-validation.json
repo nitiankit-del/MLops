@@ -8,8 +8,8 @@
   "kubernetes_replicas": 2,
   "video_seconds": 97.12,
   "github_published": false,
-  "student_details_provided": false,
-  "report_sha256": "b0ef286843ecb13017d2bd3a555bb2678770694579ec1c9daa984a56078faa90",
+  "student_details_provided": true,
+  "report_sha256": "d9e9ec57fdbfbbe8aef566367d68be77234a8f9a963b69a7f4f01cd87273ccf4",
   "narrated_video_seconds": 799.0,
   "narrated_video_full_decode": "passed"
 }

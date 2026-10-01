@@ -1,5 +1,7 @@
 # Cleveland Heart Disease — MLOps Assignment 01
 
+Student: **Ankit Kumar Agrawal** | ID: **2025AE05620**
+
 AIMLCZG523 · reproducible classification, tracked experiments, tested API, container delivery and local Kubernetes ingress.
 
 ## Start here
@@ -132,7 +134,7 @@ Sign into your own GitHub account with `gh auth login` (never put credentials in
 
 ## 10. Rebuild the report / repeat the video
 
-Reporting tools are optional for training/serving. Install them with `pip install -r requirements-report.txt -e .`. The report builder reads measured result JSON and genuine screenshots, and produces `output/pdf/MLOps_Assignment_1_Report.pdf`. Add your real `name`, `student_id` and `repository_url` in `submission-details.json` before regenerating it. Check that the final PDF remains exactly 10 pages.
+Reporting tools are optional for training/serving. Install them with `pip install -r requirements-report.txt -e .`. The report builder reads measured result JSON and genuine screenshots, and produces `output/pdf/MLOps_Assignment_1_Report.pdf`. Your name and student ID are recorded in `submission-details.json`; add the real `repository_url` after publication before regenerating it. Check that the final PDF remains exactly 10 pages.
 
 To record the browser walkthrough, start the local API ingress, MLflow UI, Jenkins and `python -m http.server 8765 --bind 127.0.0.1` from this directory. Install Google Chrome and run `python -m playwright install ffmpeg`, then `python scripts/record-walkthrough.py`. It records real browser interactions and converts the recording to MP4. The included 97-second video is captioned and has no audio narration. `screenshots/README.md` identifies the origin of each evidence image.
 
