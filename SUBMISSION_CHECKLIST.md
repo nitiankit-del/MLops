@@ -12,12 +12,12 @@ This maps requirements to actual files. It is not a promise of a grade.
 | Docker API | 5 | Dockerfile; `/predict`; validated JSON; prediction/confidence; actual build and isolated smoke evidence |
 | Deployment | 7 | kind cluster; Traefik Ingress; 2 API replicas; manifests, real kubectl/HTTP evidence, screenshot, local access instructions |
 | Monitoring and logging | 3 | structured request logs without patient payloads; Prometheus metrics; live `/monitor`; success and 422 captures |
-| Documentation/report | 2 | README, architecture, exactly 10-page PDF, CI/deployment captures, video; repository publication pending below |
+| Documentation/report | 2 | README, architecture, exactly 10-page PDF, CI/deployment captures, video; repository link included |
 | Total | 50 | See measured results; final grading belongs to the instructor |
 
 ## Required handoff items before submitting
 
-- [ ] Authenticate GitHub and push the project to https://github.com/nitiankit-del/MLops. The supplied URL is included in the README, submission details and report; upload remains pending.
+- [x] Project published to https://github.com/nitiankit-del/MLops on the main branch. The URL is included in the README, submission details and report.
 - [x] Student details included: Ankit Kumar Agrawal — 2025AE05620.
 - [ ] Review and understand the work; follow course rules for independent work and any required assistance disclosure. Explain data splitting, fold-local imputation, nested CV, confidence semantics, CI failure handling, and Kubernetes routing yourself.
 - [ ] If using GitHub Actions as the assessed CI instead of the included executed Jenkins alternative, push and retain its actual successful workflow URL/screenshots. The GitHub workflow is provided but no hosted execution is claimed.

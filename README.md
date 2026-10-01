@@ -13,7 +13,7 @@ AIMLCZG523 · reproducible classification, tracked experiments, tested API, cont
 - `reports/results.json`: authoritative measured results.
 - `evidence/`: raw execution logs; `screenshots/`: genuine UI captures and rendered command transcripts.
 
-**Submission status:** the implementation and local execution evidence are provided. The designated repository is [nitiankit-del/MLops](https://github.com/nitiankit-del/MLops). Upload is pending GitHub authentication. Read the checklist before submitting. Review the implementation and be prepared to explain your own decisions in accordance with the assignment's independent-work requirement.
+**Submission status:** the implementation and local execution evidence are provided. The designated repository is [nitiankit-del/MLops](https://github.com/nitiankit-del/MLops). The assignment files are published on the `main` branch. Read the checklist before submitting. Review the implementation and be prepared to explain your own decisions in accordance with the assignment's independent-work requirement.
 
 ## 1. Clean setup
 
