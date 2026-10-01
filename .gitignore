@@ -10,3 +10,4 @@ reports/video-source/
 reports/*.webm
 evidence/*-server.log
 evidence/mlflow-ui.log
+tmp/

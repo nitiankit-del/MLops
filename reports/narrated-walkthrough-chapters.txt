@@ -1,0 +1,10 @@
+00:00  Introduction and architecture
+01:05  Dataset acquisition and cleaning
+02:39  Exploratory data analysis
+03:59  Feature preprocessing and model development
+05:46  Model selection and evaluation
+07:19  Experiment tracking and reproducibility
+08:34  Automated testing and CI
+09:44  API and Docker containerization
+10:59  Kubernetes deployment
+12:02  Demonstration, monitoring and conclusion

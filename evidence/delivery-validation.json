@@ -9,5 +9,7 @@
   "video_seconds": 97.12,
   "github_published": false,
   "student_details_provided": false,
-  "report_sha256": "b0ef286843ecb13017d2bd3a555bb2678770694579ec1c9daa984a56078faa90"
+  "report_sha256": "b0ef286843ecb13017d2bd3a555bb2678770694579ec1c9daa984a56078faa90",
+  "narrated_video_seconds": 799.0,
+  "narrated_video_full_decode": "passed"
 }

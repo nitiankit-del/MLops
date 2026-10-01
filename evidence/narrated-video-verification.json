@@ -1,0 +1,36 @@
+{
+  "duration_seconds": 799.0,
+  "width": 1920,
+  "height": 1080,
+  "fps": "24/1",
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "audio_sample_rate": 48000,
+  "video_duration": 799.0,
+  "audio_duration": 799.0,
+  "audio_alignment_checks": [
+    {
+      "position_seconds": 20,
+      "lag_ms": -0.125,
+      "waveform_correlation": 0.9336
+    },
+    {
+      "position_seconds": 390,
+      "lag_ms": -0.125,
+      "waveform_correlation": 0.948
+    },
+    {
+      "position_seconds": 780,
+      "lag_ms": -0.125,
+      "waveform_correlation": 0.943
+    }
+  ],
+  "full_decode": "passed",
+  "source_trim_start_seconds": 7.0,
+  "source_trim_end_seconds": 806.0,
+  "narration_speed_changed": false,
+  "chapters": 10,
+  "visual_scenes": 36,
+  "sha256": "701dfd771558c877957782af5aa9dbf039aab53ab9c7a322e78ce9a1ab6ea656",
+  "source_recording_sha256": "3e15b56fae96c5ccd4a27d59abd7d992bb2899ab97940a8cd17f8971be66748c"
+}

@@ -25,7 +25,8 @@ This maps requirements to actual files. It is not a promise of a grade.
 ## Included submission files
 
 - `output/pdf/MLOps_Assignment_1_Report.pdf` — exactly 10 pages.
-- `reports/pipeline-walkthrough.mp4` — actual recorded browser walkthrough and live API interactions.
+- `reports/pipeline-walkthrough-narrated.mp4` — detailed narrated walkthrough, 13:19, with synchronized project evidence and recorded API interactions.
+- `reports/pipeline-walkthrough.mp4` — original 97-second recorded browser demonstration.
 - `screenshots/` — API, monitoring, validation, MLflow, Jenkins and deployment evidence.
 - `evidence/` — raw container, Kubernetes, training, test and CI evidence.
 - `README.md` — clean setup, training, inference, Docker, local Kubernetes, MLflow, CI and cleanup.

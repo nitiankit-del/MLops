@@ -5,7 +5,8 @@ AIMLCZG523 · reproducible classification, tracked experiments, tested API, cont
 ## Start here
 
 - `output/pdf/MLOps_Assignment_1_Report.pdf`: exactly 10 pages, measured results and deployment evidence.
-- `reports/pipeline-walkthrough.mp4`: recorded walkthrough, including real API requests.
+- `reports/pipeline-walkthrough-narrated.mp4`: detailed 13-minute 19-second walkthrough with your recorded narration, synchronized evidence and ten chapters.
+- `reports/pipeline-walkthrough.mp4`: original 97-second browser demonstration, including real API requests.
 - `SUBMISSION_CHECKLIST.md`: rubric-to-file mapping and any outstanding handoff items.
 - `reports/results.json`: authoritative measured results.
 - `evidence/`: raw execution logs; `screenshots/`: genuine UI captures and rendered command transcripts.
@@ -136,3 +137,9 @@ Reporting tools are optional for training/serving. Install them with `pip instal
 To record the browser walkthrough, start the local API ingress, MLflow UI, Jenkins and `python -m http.server 8765 --bind 127.0.0.1` from this directory. Install Google Chrome and run `python -m playwright install ffmpeg`, then `python scripts/record-walkthrough.py`. It records real browser interactions and converts the recording to MP4. The included 97-second video is captioned and has no audio narration. `screenshots/README.md` identifies the origin of each evidence image.
 
 The final verified deployment also uses the immutable local image tag `heart-api:release-074c8b3372d9`; its build, isolated prediction and rolling-update logs are `evidence/docker-final.log` and `evidence/kubernetes-final.log`. The model version remains `074c8b3372d9`.
+
+## Narrated walkthrough
+
+`reports/pipeline-walkthrough-narrated.mp4` uses the provided Zoom recording as its narration. It preserves the natural speaking pace and all spoken content, trims the initial/final silence, and applies gentle high-pass filtering and loudness normalization. The output is 1920×1080 at 24 fps with H.264 video and AAC audio. Thirty-six evidence-based scenes follow the recorded explanation; the API demonstration includes footage from the original verified browser recording.
+
+Ten embedded chapter markers are also listed in `reports/narrated-walkthrough-chapters.txt`. `evidence/narrated-video-verification.json` records full decoding and audio-alignment checks. The raw personal Zoom recording and working transcript are excluded from the repository and submission archive.
